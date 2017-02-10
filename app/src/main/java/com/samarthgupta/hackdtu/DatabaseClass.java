@@ -14,12 +14,13 @@ public class DatabaseClass {
     private int numdoc;
     private int numroom;
     private String phone;
+    private String timings;
 
     public DatabaseClass() {
 
     }
 
-    public DatabaseClass(int uid, String hname, String address, int numdoc, int numroom, String phone) {
+    public DatabaseClass(int uid, String hname, String address, int numdoc, int numroom, String phone, String timings) {
 
         this.uid= uid;
         this.hname = hname;
@@ -27,7 +28,7 @@ public class DatabaseClass {
         this.numdoc = numdoc;
         this.numroom = numroom;
         this.phone = phone;
-
+        this.timings = timings;
     }
     public String getPhone() {
         return phone;
@@ -51,5 +52,10 @@ public class DatabaseClass {
 
     public int getNumroom() {
         return numroom;
+    }
+
+
+    public String getTimings() {
+        return timings;
     }
 }

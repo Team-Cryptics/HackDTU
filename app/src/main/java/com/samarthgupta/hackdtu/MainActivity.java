@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         ref1 = firebaseDatabase.getReference();
         ref=firebaseDatabase.getReference();
-        DatabaseClass dc1 = new DatabaseClass(001, "hname","add",10,50,"989898");
+        DatabaseClass dc1 = new DatabaseClass(001, "hname","add",10,50,"989898", "9-7");
         ref.child("A").setValue(dc1);
 
         ref1.addValueEventListener(new ValueEventListener() {
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
                 DatabaseClass databaseClass;
                 for(DataSnapshot dsp : dataSnapshot.getChildren()){
-                    Log.i("TAG","TAG");
                     databaseClass=dsp.getValue(DatabaseClass.class);
                     String a= databaseClass.getAddress();
                     Log.i("TAG",a);
