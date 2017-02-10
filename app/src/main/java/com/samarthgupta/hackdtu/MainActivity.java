@@ -13,24 +13,29 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference ref;
+    DatabaseReference ref,ref1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ref1 = firebaseDatabase.getReference();
         ref=firebaseDatabase.getReference();
+        DatabaseClass dc1 = new DatabaseClass(001, "hname","add",10,50,"989898");
+        ref.child("A").setValue(dc1);
 
-        ref.addValueEventListener(new ValueEventListener() {
+        ref1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-git
-                for(DataSnapshot dsp : dataSnapshot.child("006").getChildren()){
+
+                DatabaseClass databaseClass;
+                for(DataSnapshot dsp : dataSnapshot.getChildren()){
                     Log.i("TAG","TAG");
-                    DatabaseClass databaseClass=dsp.getValue(DatabaseClass.class);
-                    Log.i("TAG","TAG");
-                    Log.i("TAG",databaseClass.getAddress());
+                    databaseClass=dsp.getValue(DatabaseClass.class);
+                    String a= databaseClass.getAddress();
+                    Log.i("TAG",a);
+
 
                 }
 

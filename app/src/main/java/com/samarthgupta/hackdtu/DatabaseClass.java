@@ -8,14 +8,25 @@ import android.provider.ContactsContract;
 
 public class DatabaseClass {
 
-    int uid;
-    String hname;
-    String address;
-    int numdoc;
-    int numroom;
-    String phone;
+    private int uid;
+    private String hname;
+    private String address;
+    private int numdoc;
+    private int numroom;
+    private String phone;
 
     public DatabaseClass() {
+
+    }
+
+    public DatabaseClass(int uid, String hname, String address, int numdoc, int numroom, String phone) {
+
+        this.uid= uid;
+        this.hname = hname;
+        this.address = address;
+        this.numdoc = numdoc;
+        this.numroom = numroom;
+        this.phone = phone;
 
     }
     public String getPhone() {
