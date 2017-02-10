@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "451270127340",
+    "firebase_url": "https://hackdtu.firebaseio.com",
+    "project_id": "hackdtu",
+    "storage_bucket": "hackdtu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451270127340:android:9ad3cd510a6c69a9",
+        "android_client_info": {
+          "package_name": "com.samarthgupta.hackdtu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451270127340-17spipohq3jr8svgbp9vl3hlittvriuv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQf_zQ2Dt2yZkOCmhTPeVXTYaXcw063L4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451270127340-17spipohq3jr8svgbp9vl3hlittvriuv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
