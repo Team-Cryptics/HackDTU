@@ -5,9 +5,16 @@
 
     <ImageView
         android:src="@drawable/imgg"
+        android:rotation="90"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@drawable/imgg"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
 
 </RelativeLayout>

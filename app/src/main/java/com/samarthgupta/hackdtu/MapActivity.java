@@ -381,10 +381,9 @@ MapActivity extends AppCompatActivity
         } else if (id == R.id.nav_heart) {
             Intent i = new Intent(MapActivity.this, HeartbeatActivity.class);
             startActivity(i);
-        } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_abt) {
-
+            Intent i = new Intent(MapActivity.this, AboutActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
