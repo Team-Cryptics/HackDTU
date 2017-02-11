@@ -1,7 +1,5 @@
 package com.samarthgupta.hackdtu;
 
-import android.provider.ContactsContract;
-
 /**
  * Created by samarthgupta on 10/02/17.
  */
