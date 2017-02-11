@@ -8,33 +8,36 @@ import android.provider.ContactsContract;
 
 public class DatabaseClass {
 
-    private int uid;
+    private String uid;
     private String hname;
     private String address;
     private int numdoc;
     private int numroom;
     private String phone;
     private String timings;
+    private String imageUrl;
 
     public DatabaseClass() {
 
     }
 
-    public DatabaseClass(int uid, String hname, String address, int numdoc, int numroom, String phone, String timings) {
+    public DatabaseClass(String uid,String imageUrl, String hname, String address, int numdoc, int numroom, String phone, String timings) {
 
         this.uid= uid;
+        this.imageUrl = imageUrl;
         this.hname = hname;
         this.address = address;
         this.numdoc = numdoc;
         this.numroom = numroom;
         this.phone = phone;
         this.timings = timings;
+
     }
     public String getPhone() {
         return phone;
     }
 
-    public int getUid() {
+    public String getUid() {
         return uid;
     }
 
@@ -54,6 +57,9 @@ public class DatabaseClass {
         return numroom;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
     public String getTimings() {
         return timings;

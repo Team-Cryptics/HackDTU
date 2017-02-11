@@ -119,13 +119,6 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
 
         googleMap.setOnMarkerClickListener(this);
 
-//        Button btnRestaurant = (Button) findViewById(R.id.btnRestaurant);
-//        btnRestaurant.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                build_retrofit_and_get_response("restaurant");
-//            }
-//        });
     }
 
     void build_retrofit_and_get_response(String type) {
@@ -316,7 +309,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
     public boolean onMarkerClick(Marker marker) {
 
         Toast.makeText(this, "Marker ID " + marker.getId(), Toast.LENGTH_SHORT).show();
-        Log.i("Marker ID",marker.getId());
+        Log.i("TAG",marker.getId());
         return false;
     }
 

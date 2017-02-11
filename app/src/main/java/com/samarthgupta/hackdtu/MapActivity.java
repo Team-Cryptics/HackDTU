@@ -46,16 +46,25 @@ MapActivity extends AppCompatActivity
 
         ref1 = firebaseDatabase.getReference();
         ref=firebaseDatabase.getReference();
-        DatabaseClass dc1 = new DatabaseClass(001, "hname","add",10,50,"989898","9-7");
-        ref.child("A").setValue(dc1);
+
+         String uid = "m13";
+         String hname = "Sanjay gandhi hospital Hospital";
+         String address = "Block S, Mangolpuri, Delhi, 110083";
+          int numdoc =15;
+         int numroom= 25;
+         String phone = "282759087";
+         String timings = "24 hours";
+         String imageUrl = "https://hrelate.in/img/user_profile/sanjay-gandhi-memorial-hospital-mangolpuri-delhi1715712591.jpg";
+        DatabaseClass dc1 = new DatabaseClass(uid,imageUrl,hname,address,numdoc,numroom,phone,timings);
+
+        ref.child("Hospitals").child(uid).setValue(dc1);
 
         ref1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                DatabaseClass databaseClass;
-                for(DataSnapshot dsp : dataSnapshot.getChildren()){
-                    Log.i("TAG","TAG");
+               DatabaseClass databaseClass;
+                for(DataSnapshot dsp : dataSnapshot.child("Hospitals").getChildren()){
                     databaseClass=dsp.getValue(DatabaseClass.class);
                     String a= databaseClass.getAddress();
                     Log.i("TAG",a);
