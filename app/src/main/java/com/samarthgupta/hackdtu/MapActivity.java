@@ -1,6 +1,7 @@
 package com.samarthgupta.hackdtu;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -421,7 +422,10 @@ MapActivity extends AppCompatActivity
     @Override
     public boolean onMarkerClick(Marker marker) {
         Toast.makeText(this, "Marker ID " + marker.getId(), Toast.LENGTH_SHORT).show();
-        Log.i("Marker ID",marker.getId());
+        Log.i("TAG",marker.getId() + "IN MAP");
+        Intent i = new Intent(getApplicationContext(), Card_View.class);
+        i.putExtra("ID", marker.getId());
+        startActivity(i);
         return false;
     }
 
