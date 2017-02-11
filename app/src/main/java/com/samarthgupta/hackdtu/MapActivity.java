@@ -42,6 +42,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.samarthgupta.hackdtu.POJO.Example;
 
+import java.util.Map;
+
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.GsonConverterFactory;
@@ -390,6 +392,8 @@ MapActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(MapActivity.this, HeartbeatActivity.class);
+            startActivity(i);
             return true;
         }
 
@@ -407,7 +411,8 @@ MapActivity extends AppCompatActivity
         } else if (id == R.id.nav_chemist) {
             build_retrofit_and_get_response("pharmacy");
         } else if (id == R.id.nav_heart) {
-
+            Intent i = new Intent(MapActivity.this, HeartbeatActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_abt) {

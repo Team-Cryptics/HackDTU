@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.samarthgupta.hackdtu">
 
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -25,8 +30,12 @@
         <activity
             android:name=".MapActivity"
             android:label="@string/title_activity_map"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Card_View"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HeartbeatActivity">
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".InfoActivity"></activity>
     </application>
 
 </manifest>
