@@ -3,21 +3,18 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_hospital"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Hospitals" />
+            android:title="Hospitals and Clinics" />
+
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Clinics" />
-        <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_chemist"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Chemists" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_heart"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Settings" />
+            android:title="Check Heart Rate" />
     </group>
 
     <item android:title="Communicate">
@@ -27,7 +24,7 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="Share" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_abt"
                 android:icon="@drawable/ic_menu_send"
                 android:title="About" />
         </menu>

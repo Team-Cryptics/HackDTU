@@ -20,8 +20,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MapActivity extends AppCompatActivity
+public class
+MapActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    MapsActivity mapsActivity;
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference ref,ref1;
 
@@ -31,6 +33,7 @@ public class MapActivity extends AppCompatActivity
         setContentView(R.layout.activity_map);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mapsActivity = new MapsActivity();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -108,17 +111,15 @@ public class MapActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        if (id == R.id.nav_hospital) {
+            mapsActivity.build_retrofit_and_get_response("hospital");
+        } else if (id == R.id.nav_chemist) {
+            mapsActivity.build_retrofit_and_get_response("pharmacy");
+        } else if (id == R.id.nav_heart) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_abt) {
 
         }
 
