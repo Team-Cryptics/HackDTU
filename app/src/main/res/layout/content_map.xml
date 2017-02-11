@@ -1,42 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_map"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.samarthgupta.hackdtu.MapActivity"
     tools:showIn="@layout/app_bar_map">
 
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:padding="16dp"
-            android:id="@+id/tv_search"
-            android:hint="Enter the location to search..."
-            android:layout_weight="0.85"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <ImageButton
-            android:layout_weight="0.15"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:padding="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <fragment android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -45,9 +17,32 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="com.androidtutorialpoint.googlemapsretrofit.MapsActivity"/>
+            tools:context="com.samarthgupta.hackdtu.MapsActivity"/>
 
+    <LinearLayout
+        android:padding="16dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    </LinearLayout>
+        <EditText
+            android:id="@+id/editText"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:hint="Enter location..."
+            android:background="@color/wallet_bright_foreground_holo_dark"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:layout_weight="0.7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageButton
+            android:id="@+id/ib_search"
+            android:layout_weight="0.15"
+            android:layout_width="0dp"
+            android:layout_height="50dp" />
+        <Space
+            android:layout_weight="0.15"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
 
-</LinearLayout>
+    </LinearLayout></FrameLayout>
