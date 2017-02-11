@@ -35,7 +35,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".CardViewNew" ></activity>
     </application>
 
 </manifest>

@@ -56,9 +56,9 @@ MapActivity extends AppCompatActivity
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference ref,ref1;
+
     private GoogleMap mMap;
+    public boolean isHospital;
     double latitude;
     double longitude;
     private int PROXIMITY_RADIUS = 10000;
@@ -93,33 +93,6 @@ MapActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        ref1 = firebaseDatabase.getReference();
-//        ref=firebaseDatabase.getReference();
-//        DatabaseClass dc1 = new DatabaseClass(001, "hname","add",10,50,"989898","9-7");
-//        ref.child("A").setValue(dc1);
-//
-//        ref1.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//
-//                DatabaseClass databaseClass;
-//                for(DataSnapshot dsp : dataSnapshot.getChildren()){
-//                    Log.i("TAG","TAG");
-//                    databaseClass=dsp.getValue(DatabaseClass.class);
-//                    String a= databaseClass.getAddress();
-//                    Log.i("TAG",a);
-//
-//
-//                }
-//
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
 
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -174,13 +147,6 @@ MapActivity extends AppCompatActivity
 
         googleMap.setOnMarkerClickListener(this);
 
-//        Button btnRestaurant = (Button) findViewById(R.id.btnRestaurant);
-//        btnRestaurant.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                build_retrofit_and_get_response("restaurant");
-//            }
-//        });
     }
 
     void build_retrofit_and_get_response(String type) {
@@ -289,7 +255,7 @@ MapActivity extends AppCompatActivity
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
         Log.d("onLocationChanged", String.format("latitude:%.3f longitude:%.3f", latitude, longitude));
 
@@ -408,8 +374,10 @@ MapActivity extends AppCompatActivity
 
         if (id == R.id.nav_hospital) {
             build_retrofit_and_get_response("hospital");
+            isHospital = true;
         } else if (id == R.id.nav_chemist) {
             build_retrofit_and_get_response("pharmacy");
+            isHospital = false;
         } else if (id == R.id.nav_heart) {
             Intent i = new Intent(MapActivity.this, HeartbeatActivity.class);
             startActivity(i);
@@ -426,11 +394,14 @@ MapActivity extends AppCompatActivity
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Toast.makeText(this, "Marker ID " + marker.getId(), Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(MapActivity.this, CardViewNew.class);
+        Log.i("TAG",marker.getTitle() + "IN MAP");
         Log.i("TAG",marker.getId() + "IN MAP");
-        Intent i = new Intent(getApplicationContext(), Card_View.class);
-        i.putExtra("ID", marker.getId());
+        i.putExtra("Title", marker.getTitle());
+        i.putExtra("is", isHospital);
         startActivity(i);
+
         return false;
     }
 

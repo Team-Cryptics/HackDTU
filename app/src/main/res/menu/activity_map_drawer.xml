@@ -4,16 +4,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_hospital"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/hos"
             android:title="Hospitals and Clinics" />
 
         <item
             android:id="@+id/nav_chemist"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Chemists" />
+            android:icon="@drawable/phar"
+            android:title="Pharmacy" />
         <item
             android:id="@+id/nav_heart"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/heart"
             android:title="Check Heart Rate" />
     </group>
 
